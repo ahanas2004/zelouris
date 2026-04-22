@@ -1,0 +1,63 @@
+.testi-section {
+  background: var(--bg-deep);
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  position: relative; z-index: 1;
+}
+
+.testi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 40px;
+  transition: all 0.5s var(--ease-out-expo);
+  display: flex;
+  flex-direction: column;
+}
+.testi-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(91,110,245,0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.testi-stars {
+  font-size: 14px;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+}
+
+.testi-text {
+  font-size: 16px; color: var(--text-primary);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+.testi-author {
+  display: flex; align-items: center; gap: 16px;
+}
+.testi-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.testi-name {
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.testi-company {
+  font-size: 12px; color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
