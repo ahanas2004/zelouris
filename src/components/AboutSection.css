@@ -137,4 +137,9 @@
 @media (max-width: 900px) {
   .about-section { padding: 80px 24px; }
   .about-inner { grid-template-columns: 1fr; gap: 48px; }
+  .about-founder-side { display: flex; flex-direction: column; align-items: center; text-align: center; }
+}
+
+@media (max-width: 600px) {
+  .team-grid { grid-template-columns: 1fr; }
 }

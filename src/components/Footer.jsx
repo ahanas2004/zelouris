@@ -8,8 +8,8 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-grid">
         <div className="reveal" data-delay="0">
-          <Link to="/" className="footer-logo">Zelouris</Link>
-          <div className="footer-tagline">AI-powered creative agency building brands, products, and marketing systems that scale. Your growth partner for the AI era.</div>
+          <Link to="/" className="footer-logo">Zelouris<span className="logo-ai">AI</span></Link>
+          <div className="footer-tagline">The world's first AI-integrated growth agency. Scaling design, development, and marketing with machine intelligence.</div>
           <div className="footer-socials" style={{ marginTop: 24 }}>
             {['𝕏', 'in', 'f', '▶', '📸'].map((s, i) => (
               <a key={i} className="social-btn" href="#" aria-label="Social Link">{s}</a>
@@ -49,7 +49,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom reveal" data-delay="400">
-        <div className="footer-copy">© 2025 Zelouris. All rights reserved by Zelouris. Built with ❤️ and AI.</div>
+        <div className="footer-copy">© 2025 Zelouris. All rights reserved by Zelouris.</div>
         <div style={{ display: 'flex', gap: 24 }}>
           {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(l => (
             <a key={l} href="#" style={{ fontSize: 12, color: 'var(--text-muted)', textDecoration: 'none', cursor: 'none' }}>{l}</a>

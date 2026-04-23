@@ -1,28 +1,63 @@
 import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useTheme } from '../context/ThemeContext'
 
 export default function Loader() {
-  const [gone, setGone] = useState(false)
-  const [hidden, setHidden] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const { theme } = useTheme()
 
   useEffect(() => {
-    const t1 = setTimeout(() => setGone(true), 2200)
-    const t2 = setTimeout(() => setHidden(true), 3000)
-    return () => { clearTimeout(t1); clearTimeout(t2) }
+    const timer = setTimeout(() => setLoading(false), 2000)
+    return () => clearTimeout(timer)
   }, [])
 
-  if (hidden) return null
-
   return (
-    <div className={`loader-overlay${gone ? ' gone' : ''}`}>
-      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
-        <div className="glow-blob" style={{ width: 400, height: 400, top: '20%', left: '30%', background: 'radial-gradient(circle, rgba(91,110,245,0.6), transparent 70%)' }} />
-        <div className="glow-blob" style={{ width: 300, height: 300, top: '50%', right: '20%', background: 'radial-gradient(circle, rgba(139,92,246,0.5), transparent 70%)' }} />
-      </div>
-      <div className="loader-logo-text">Zelouris</div>
-      <div className="loader-bar-track">
-        <div className="loader-bar-fill" />
-      </div>
-      <div className="loader-tagline">AI-Powered Creative Agency</div>
-    </div>
+    <AnimatePresence>
+      {loading && (
+        <motion.div
+          className="loader-overlay"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            background: theme === 'dark' ? '#04040e' : '#f8f9ff',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'fixed',
+            inset: 0,
+            zIndex: 9999
+          }}
+        >
+          <motion.div 
+            className="loader-logo-text"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            style={{
+              fontSize: 'clamp(32px, 6vw, 64px)',
+              fontWeight: 800,
+              background: 'linear-gradient(135deg, #5b6ef5 0%, #8b5cf6 50%, #22d3ee 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              marginBottom: 20
+            }}
+          >
+            Zelouris
+          </motion.div>
+          
+          <div className="loader-bar-track" style={{ width: 200, height: 2, background: 'rgba(255,255,255,0.1)', borderRadius: 99, overflow: 'hidden' }}>
+            <motion.div 
+              className="loader-bar-fill"
+              initial={{ width: 0 }}
+              animate={{ width: '100%' }}
+              transition={{ duration: 1.8, ease: "easeInOut" }}
+              style={{ height: '100%', background: 'var(--grad-1)' }}
+            />
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }
