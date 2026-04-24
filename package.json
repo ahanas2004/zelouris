@@ -11,12 +11,14 @@
   "dependencies": {
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.0",
+    "@react-three/postprocessing": "^3.0.4",
     "framer-motion": "^12.38.0",
     "maath": "^0.10.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.28.0",
-    "three": "^0.184.0"
+    "three": "^0.184.0",
+    "three-stdlib": "^2.36.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.1",

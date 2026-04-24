@@ -7,7 +7,6 @@ import Home from './pages/Home'
 import Services from './pages/Services'
 import About from './pages/About'
 import Portfolio from './pages/Portfolio'
-import Pricing from './pages/Pricing'
 import Contact from './pages/Contact'
 import Quote from './pages/Quote'
 import Loader from './components/Loader'
@@ -25,7 +24,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <ScrollToTop />
         <Loader />
         <Cursor />
@@ -36,7 +35,6 @@ export default function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/quote" element={<Quote />} />
           </Routes>
@@ -46,4 +44,3 @@ export default function App() {
     </ThemeProvider>
   )
 }
-

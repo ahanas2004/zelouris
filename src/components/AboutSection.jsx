@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useReveal } from '../hooks'
+import Abstract3D from './Abstract3D'
 import './AboutSection.css'
 
 const VALUES = [
@@ -59,7 +60,9 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          style={{ position: 'relative' }}
         >
+          <Abstract3D type="torus" withStars={true} style={{ opacity: 0.3, zIndex: -1, right: '-20%', left: '-20%', top: '-20%', height: '140%', width: '140%' }} />
           <div className="section-tag" style={{ marginBottom: 20 }}>The Founders</div>
           <div className="team-grid" style={{ gridTemplateColumns: '1fr' }}>
             {TEAM.map((t, i) => (

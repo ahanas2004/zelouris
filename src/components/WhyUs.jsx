@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { useReveal, useTilt } from '../hooks'
+import Abstract3D from './Abstract3D'
 import './WhyUs.css'
 
 const FEATURES = [
@@ -23,6 +24,7 @@ export default function WhyUs() {
 
       <div className="why-grid">
         <div className="why-visual reveal-left" ref={ref}>
+          <Abstract3D type="sphere" withStars={true} style={{ opacity: 0.6, zIndex: -1, top: '-20%', left: '-20%', right: '-20%', bottom: '-20%' }} />
           <div className="why-card-3d wc1">
             <div className="wcard-num">200+</div>
             <div className="wcard-label">Projects Delivered</div>

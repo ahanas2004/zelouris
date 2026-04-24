@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useReveal } from '../hooks'
 import { SERVICES } from '../data'
+import Abstract3D from './Abstract3D'
 import './ServicesSection.css'
 
 const CATS = ['All', 'Development', 'Design', 'Marketing', 'AI & Automation', 'Growth Services']
@@ -13,6 +14,7 @@ export default function ServicesSection() {
 
   return (
     <section className="services-section">
+      <Abstract3D type="torus" withStars={true} style={{ opacity: 0.15, zIndex: 0, top: '20%', right: '-30%', width: '80%', height: '80%' }} />
       <div className="glow-blob-1" />
       <motion.div 
         className="section-header"

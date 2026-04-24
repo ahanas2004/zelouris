@@ -78,10 +78,20 @@ body {
   background: var(--bg-deep);
   color: var(--text-primary);
   overflow-x: hidden;
-  cursor: auto;
+  cursor: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-osx-font-smoothing: grayscale;
   transition: background 0.4s var(--ease-out-expo), color 0.4s var(--ease-out-expo);
+}
+
+@media (max-width: 768px) {
+  body { cursor: auto !important; }
+  * { cursor: auto !important; }
+}
+
+/* Hide system cursor on interactive elements for desktop */
+a, button, input, select, textarea, .filter-pill, .social-btn, .service-card {
+  cursor: none;
 }
 
 /* Custom cursor */

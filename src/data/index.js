@@ -41,29 +41,10 @@ export const TESTIMONIALS = [
   { stars: "★★★★★", text: "Their AI integration isn't just a buzzword. They actually built a custom predictive model that helps us forecast inventory with 94% accuracy. Highly recommended!", name: "James Wilson", company: "Ops Director, LogiStream", avatar: "👔" },
 ]
 
-export const PRICING_TIERS = [
-  {
-    tier: 'Starter', name: 'Launch', price: '₹24,999', period: '/month',
-    features: ['1 Website or App', 'Logo & Basic Branding', 'Social Media Setup (2 platforms)', 'Basic SEO', 'Meta Ads Setup', '1 AI Chatbot', 'Monthly Report', 'Email Support'],
-    cta: 'Get Started',
-  },
-  {
-    tier: 'Growth', name: 'Scale', price: '₹69,999', period: '/month', featured: true,
-    features: ['Everything in Starter', 'Custom Web App or E-commerce', 'Full Brand Identity', 'SEO + Content', 'Meta + Google Ads', 'WhatsApp Automation', 'AI-Driven Marketing', 'CRO Audit & Fixes', 'Priority Support', 'Weekly Reports'],
-    cta: 'Most Popular',
-  },
-  {
-    tier: 'Enterprise', name: 'Dominate', price: 'Custom', period: 'tailored to you',
-    features: ['Everything in Scale', 'Unlimited Projects', 'Voice AI & IVR System', 'AI Analytics Dashboard', 'Dedicated Project Manager', 'SLA-backed Delivery', 'Quarterly Strategy Sessions', 'White-glove Onboarding', '24/7 Priority Support'],
-    cta: 'Talk to Us',
-  },
-]
-
 export const NAV_LINKS = [
   { label: 'Home', path: '/' },
   { label: 'Services', path: '/services' },
   { label: 'About', path: '/about' },
   { label: 'Portfolio', path: '/portfolio' },
-  { label: 'Pricing', path: '/pricing' },
   { label: 'Contact', path: '/contact' },
 ]

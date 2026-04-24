@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useReveal } from '../hooks'
 import { PORTFOLIO } from '../data'
+import Abstract3D from './Abstract3D'
 import './PortfolioSection.css'
 
 const CATS = ['All', 'Web', 'App', 'Branding', 'Marketing', 'AI']
@@ -13,19 +14,21 @@ export default function PortfolioSection() {
 
   return (
     <section className="portfolio-section">
+      <Abstract3D type="sphere" withStars={true} style={{ opacity: 0.1, zIndex: 0, bottom: '-20%', left: '-20%', width: '60%', height: '60%' }} />
       <motion.div 
         className="section-header"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
+        style={{ position: 'relative', zIndex: 2 }}
       >
         <div className="section-tag">Our Work</div>
         <h2 className="section-title">Built to <span>Impress</span></h2>
         <p className="section-sub">A selection of projects that delivered real, measurable results for our clients.</p>
       </motion.div>
 
-      <div className="portfolio-filters" data-delay="100">
+      <div className="portfolio-filters" data-delay="100" style={{ position: 'relative', zIndex: 2 }}>
         {CATS.map(c => (
           <button 
             key={c} 
@@ -37,7 +40,7 @@ export default function PortfolioSection() {
         ))}
       </div>
 
-      <motion.div layout className="portfolio-grid">
+      <motion.div layout className="portfolio-grid" style={{ position: 'relative', zIndex: 2 }}>
         <AnimatePresence mode='popLayout'>
           {filtered.map((p, i) => (
             <motion.div

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useCounter, useReveal } from '../hooks'
 import { useTheme } from '../context/ThemeContext'
-import ThreeBackground from './ThreeBackground'
+import Abstract3D from './Abstract3D'
 import './Hero.css'
 
 export default function Hero() {
@@ -53,13 +53,16 @@ export default function Hero() {
 
   return (
     <section className="hero" data-theme={theme}>
+      {/* Consolidated Single 3D Canvas */}
+      <Abstract3D 
+        type="combo" 
+        withStars={true} 
+        style={{ width: '100%', height: '100%', top: 0, left: 0, opacity: 0.8 }} 
+      />
+
       <div className="hero-mesh" />
       <div className="hero-grid" />
-      <ThreeBackground />
-      <div className="hero-orb orb1" />
-      <div className="hero-orb orb2" />
-      <div className="hero-orb orb3" />
-
+      
       <div className="hero-cards">
         {[
           { id: 'fc1', icon: <span className="fc-dot green" />, text: 'AI Chatbot Live', tag: 'PRODUCTION' },
