@@ -86,3 +86,6 @@ npm run preview
 - **Colors** — Edit CSS variables in `src/styles/global.css` under `:root`.
 - **Fonts** — Change the Google Fonts import in `index.html` and update `--font-display`, `--font-body`, `--font-mono` in global CSS.
 - **New pages** — Add a file to `src/pages/`, add a `<Route>` in `App.jsx`, and a link entry in `src/data/index.js` → `NAV_LINKS`.
+
+
+---\n*Last updated: 2026-04-27*
